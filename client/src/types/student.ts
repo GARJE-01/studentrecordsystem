@@ -25,3 +25,22 @@ export const CLASS_OPTIONS = [
   { value: "IT-BE", label: "IT - BE (Final Year)" },
   { value: "EC-A", label: "Electronics & Communication - A" },
 ];
+
+// Subject name options
+export const SUBJECT_NAME_OPTIONS = [
+  "Mathematics",
+  "Physics",
+  "Chemistry",
+  "Biology",
+  "Computer Science",
+  "Programming",
+  "Data Structures",
+  "Algorithms",
+  "Database Systems",
+  "Operating Systems",
+  "Computer Networks",
+  "Web Development",
+  "Software Engineering",
+  "Artificial Intelligence",
+  "Machine Learning"
+];
