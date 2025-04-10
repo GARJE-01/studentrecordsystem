@@ -18,12 +18,15 @@ export interface Notification {
 
 // Class options for the dropdown
 export const CLASS_OPTIONS = [
-  { value: "CS-A", label: "Computer Science - A" },
-  { value: "CS-B", label: "Computer Science - B" },
-  { value: "IT-SE", label: "IT - SE (Second Year)" },
-  { value: "IT-TE", label: "IT - TE (Third Year)" },
-  { value: "IT-BE", label: "IT - BE (Final Year)" },
-  { value: "EC-A", label: "Electronics & Communication - A" },
+  { value: "CS-SE", label: "Computer Science - Second Year" },
+  { value: "CS-TE", label: "Computer Science - Third Year" },
+  { value: "CS-BE", label: "Computer Science - Fourth Year" },
+  { value: "IT-SE", label: "IT - Second Year" },
+  { value: "IT-TE", label: "IT - Third Year" },
+  { value: "IT-BE", label: "IT - Final Year" },
+  { value: "EC-SE", label: "Electronics & Communication - Second Year" },
+  { value: "EC-TE", label: "Electronics & Communication - Third Year" },
+  { value: "EC-BE", label: "Electronics & Communication - Fourth Year" },
 ];
 
 // Subject name options

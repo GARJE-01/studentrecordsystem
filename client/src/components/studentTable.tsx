@@ -5,20 +5,24 @@ import { Student } from "@shared/schema";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import React, { useState } from "react";
+import { Save } from "lucide-react";
 
 interface StudentTableProps {
   students: Student[];
   isLoading: boolean;
   onEdit: (student: Student) => void;
   onDelete: (student: Student) => void;
+  onSaveChanges?: (student: Student) => void;
 }
 
 export default function StudentTable({ 
   students, 
   isLoading, 
   onEdit, 
-  onDelete 
+  onDelete,
+  onSaveChanges
 }: StudentTableProps) {
+  const [editingStudentId, setEditingStudentId] = useState<number | null>(null);
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
   
   const toggleRowExpansion = (studentId: number) => {
