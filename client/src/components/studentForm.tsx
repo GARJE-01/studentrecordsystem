@@ -52,7 +52,7 @@ export default function StudentForm({
               <FormItem>
                 <FormLabel>Registration Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="e.g. REG2023001" {...field} />
+                  <Input placeholder="e.g. T-11-0001" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

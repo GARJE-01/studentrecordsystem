@@ -16,6 +16,21 @@ export class MemStorage implements IStorage {
   constructor() {
     this.students = new Map();
     this.currentId = 1;
+    
+    // Add some sample data
+    const sampleData: InsertStudent[] = [
+      { registrationNo: "T-11-0001", name: "John Doe", class: "Computer Science", subjectMarks: 42 },
+      { registrationNo: "T-11-0002", name: "Jane Smith", class: "Electronics", subjectMarks: 45 },
+      { registrationNo: "T-11-0003", name: "Alex Johnson", class: "Mechanical", subjectMarks: 38 },
+      { registrationNo: "T-11-0004", name: "Samantha Lee", class: "Civil", subjectMarks: 40 },
+      { registrationNo: "T-11-0005", name: "Michael Brown", class: "Computer Science", subjectMarks: 48 }
+    ];
+    
+    // Insert sample data
+    sampleData.forEach(student => {
+      const id = this.currentId++;
+      this.students.set(id, { ...student, id });
+    });
   }
 
   async getStudents(): Promise<Student[]> {

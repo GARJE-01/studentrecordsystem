@@ -22,19 +22,21 @@ export default function Sidebar() {
           {navigation.map((item) => {
             const isActive = location === item.href;
             return (
-              <Link key={item.name} href={item.href}>
-                <a
-                  className={cn(
-                    "flex items-center px-4 py-3 text-base font-medium rounded-md",
-                    isActive
-                      ? "bg-primary text-white"
-                      : "text-gray-900 hover:bg-gray-50"
-                  )}
-                >
-                  <item.icon className="mr-3 h-5 w-5" />
-                  {item.name}
-                </a>
-              </Link>
+              <div key={item.name}>
+                <Link href={item.href}>
+                  <div
+                    className={cn(
+                      "flex items-center px-4 py-3 text-base font-medium rounded-md cursor-pointer",
+                      isActive
+                        ? "bg-primary text-white"
+                        : "text-gray-900 hover:bg-gray-50"
+                    )}
+                  >
+                    <item.icon className="mr-3 h-5 w-5" />
+                    {item.name}
+                  </div>
+                </Link>
+              </div>
             );
           })}
         </nav>

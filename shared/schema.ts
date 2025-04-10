@@ -18,7 +18,7 @@ export const insertStudentSchema = createInsertSchema(students).pick({
 }).extend({
   registrationNo: z.string()
     .min(1, "Registration number is required")
-    .regex(/^REG\d{7}$/, "Registration number must follow the format REGyyyynnn"),
+    .regex(/^T-\d{2}-\d{4}$/, "Registration number must follow the format T-11-0001"),
   name: z.string().min(1, "Full name is required"),
   class: z.string().min(1, "Class selection is required"),
   subjectMarks: z.number()
