@@ -6,6 +6,7 @@ import Dashboard from "@/pages/dashboard";
 import Students from "@/pages/students";
 import Reports from "@/pages/reports";
 import Settings from "@/pages/settings";
+import DatabaseManager from "@/pages/database";
 import NotFound from "@/pages/not-found";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
@@ -22,6 +23,7 @@ function Router() {
             <Route path="/students" component={Students} />
             <Route path="/reports" component={Reports} />
             <Route path="/settings" component={Settings} />
+            <Route path="/database" component={DatabaseManager} />
             <Route component={NotFound} />
           </Switch>
         </main>

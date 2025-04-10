@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertStudentSchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { pool } from "./db";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all students
@@ -121,6 +122,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error deleting student:", error);
       res.status(500).json({ message: "Failed to delete student" });
+    }
+  });
+  
+  // Execute custom SQL queries for database management
+  app.post("/api/db-query", async (req, res) => {
+    try {
+      const { query } = req.body;
+      
+      if (!query || typeof query !== 'string') {
+        return res.status(400).json({ 
+          error: "Invalid query parameter", 
+          data: [] 
+        });
+      }
+      
+      // Execute the query
+      const result = await pool.query(query);
+      
+      // Return the result
+      res.json({ 
+        data: result.rows,
+        message: `Query executed successfully: ${result.rowCount} rows affected.` 
+      });
+    } catch (error: any) {
+      console.error("Database query error:", error);
+      res.status(500).json({ 
+        error: error.message || "Failed to execute database query", 
+        data: [] 
+      });
     }
   });
 

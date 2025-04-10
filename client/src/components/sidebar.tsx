@@ -1,11 +1,12 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Home, Users, BarChart2, Settings } from "lucide-react";
+import { Home, Users, BarChart2, Settings, Database } from "lucide-react";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: Home },
   { name: "Students", href: "/students", icon: Users },
   { name: "Reports", href: "/reports", icon: BarChart2 },
+  { name: "Database", href: "/database", icon: Database },
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 
