@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: student-record-server
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    plan: free
+
+  - type: web
+    name: student-record-client
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    plan: free
