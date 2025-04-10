@@ -20,7 +20,8 @@ export interface Notification {
 export const CLASS_OPTIONS = [
   { value: "CS-A", label: "Computer Science - A" },
   { value: "CS-B", label: "Computer Science - B" },
-  { value: "IT-A", label: "Information Technology - A" },
-  { value: "IT-B", label: "Information Technology - B" },
+  { value: "IT-SE", label: "IT - SE (Second Year)" },
+  { value: "IT-TE", label: "IT - TE (Third Year)" },
+  { value: "IT-BE", label: "IT - BE (Final Year)" },
   { value: "EC-A", label: "Electronics & Communication - A" },
 ];
